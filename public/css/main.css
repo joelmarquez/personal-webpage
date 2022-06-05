@@ -795,10 +795,6 @@ section {
   position: initial;
 }
 
-.post-thumb:hover {
-  color:#017fb5;
-}
-
 .post-icon {
   position: absolute;
   top:10px;

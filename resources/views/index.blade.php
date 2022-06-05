@@ -165,6 +165,7 @@
         </div>
     </section><!--/#about-us-->
 
+    {{-- Portafolio --}}
     <section id="portfolio">
         <div class="container">
             <div class="row">
@@ -175,7 +176,7 @@
             </div> 
         </div>
         <div class="container-fluid">
-            <div class="row">
+            
                 <div class="col-sm-3">
                     <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="300ms">
                         <div class="folio-image">
@@ -261,10 +262,11 @@
                     </div>
                 </div>
             </div>
+            {{-- Segunda fila --}}
             <div class="col-sm-3">
                 <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="700ms">
                     <div class="folio-image">
-                        <img class="img-responsive" src="images/portfolio/todoCanon.jpg" alt="">
+                        <img class="img-responsive" src="images/portfolio/todoCanon.jpg" alt="Todo Canon">
                     </div>
                     <div class="overlay">
                         <div class="overlay-content">
@@ -327,7 +329,94 @@
             <div class="col-sm-3">
                 <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="1000ms">
                     <div class="folio-image">
-                        <img class="img-responsive" src="images/portfolio/disponible.jpg" alt="Disponible para tu web">
+                        <img class="img-responsive" src="images/portfolio/tiendas-industriales.jpg" alt="Tiendas Industriales">
+                    </div>
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-text">
+                                <div class="folio-info">
+                                    <h3>Tiendas Industriales</h3>
+                                    <p>Comercializadora al mayot de elementos para la industria</p>
+                                </div>
+                                <div class="folio-overview">
+                                    <span class="folio-link"><a href="https://www.tiendasindustriales.com" ><i class="fa fa-link"></i></a></span>
+                                    <span class="folio-expand"><a href="images/portfolio/tiendas-industriales.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            {{-- Tercera Fila --}}
+            <div class="col-sm-3">
+                <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="1100ms">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="images/portfolio/hosting.jpg" alt="Hosting a Medida">
+                    </div>
+                    <div class="overlay">
+                        <div class="overlay-content">
+                        <div class="overlay-text">
+                                <div class="folio-info">
+                                    <h3>Hosting a Medida</h3>
+                                    <p>Hosting para emprendedores y pequeñas empresas</p>
+                                </div>
+                                <div class="folio-overview">
+                                    <span class="folio-link"><a href="https://hostingamedida.com" target="_blank"><i class="fa fa-link"></i></a></span>
+                                    <span class="folio-expand"><a href="images/portfolio/hosting.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="1200ms">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="images/portfolio/colchones-moon.jpg" alt="Colchones Moon">
+                    </div>
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-text">
+                                <div class="folio-info">
+                                    <h3>Colchones Moon</h3>
+                                    <p>Almacenes dedicados a la venta de colchones para el hogar</p>
+                                </div>
+                                <div class="folio-overview">
+                                    <span class="folio-link"><a href="https://www.colchonesmoon.com" target="_blank"><i class="fa fa-link"></i></a></span>
+                                    <span class="folio-expand"><a href="images/portfolio/colchones-moon.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="1300ms">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="images/portfolio/grupodamark.jpg" alt="Grupo Damark">
+                    </div>
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-text">
+                                <div class="folio-info">
+                                    <h3>Grupo Damark</h3>
+                                    <p>Grupo de Empresas dedicadas a diferentes rubros de la tecnología</p>
+                                </div>
+                                <div class="folio-overview">
+                                    <span class="folio-link"><a href="https://www.grupodamark.com" target="_blank"><i class="fa fa-link"></i></a></span>
+                                    <span class="folio-expand"><a href="images/portfolio/grupo-dotcom-damark.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="1400ms">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="images/portfolio/disponible.png" alt="Disponible">
                     </div>
                     <div class="overlay">
                         <div class="overlay-content">
@@ -337,7 +426,7 @@
                                     <p></p>
                                 </div>
                                 <div class="folio-overview">
-                                    <!-- <span class="folio-link"><a href="#" ><i class="fa fa-link"></i></a></span> -->
+                                    {{-- <span class="folio-link"><a href="https://www.tiendasindustriales.com" ><i class="fa fa-link"></i></a></span> --}}
                                     <span class="folio-expand"><a href="images/portfolio/disponible.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
                                 </div>
                             </div>
@@ -346,10 +435,12 @@
                 </div>
             </div>
             </div>
+
             <div id="portfolio-single-wrap">
                 <div id="portfolio-single">
                 </div>
             </div><!-- /#portfolio-single-wrap -->
+        </div>
     </section><!--/#portfolio-->
 
         <section id="review">
@@ -552,47 +643,54 @@
                     <div class="row">
 
                         <?php
-                            // $api_key="AIzaSyB9Jke6rnaLhptLSDZk95JbrvYeuslai0w"; // Ingresar tu Api Key
+                            // Api Youtube
                             $api_key="AIzaSyBqgVlVpwi1yYUw0CXiO8VVHHpy2aURm24"; // Ingresar tu Api Key
                             $channel_id="UC8ezcxZ4sM_8qAD8_PyJ18w"; // El Id del canal
-                            $max_results="6"; // Resultados a mostrar
+                            $max_results="3"; // Resultados a mostrar
                             
                             // LLamar a la API para obtener la lista de videos en JSON
                             $query = "https://www.googleapis.com/youtube/v3/search?key=$api_key&channelId=$channel_id&part=snippet,id&order=date&maxResults=".$max_results;
                             $videoList = file_get_contents($query);
                             
 
-                            // Convertir el JSON a Array
-                            $results = json_decode($videoList, true);
+                            if($query  == false)  {
 
-                            foreach ($results['items'] as $items)
-                            {
-                                $id = $items['id']['videoId']; //  Id del video
-                                $title= $items['snippet']['title']; // Titulo del video
-                                $description = $items['snippet']['description']; // Descripcion del video
-                                $published_at = $items['snippet']['publishedAt']; // Fecha de publicacion
-                                $channel_title = $items['snippet']['channelTitle']; // Titulo del canal
-                                $thumbnail = $items['snippet']['thumbnails']['medium']['url']; // Imagen miniatura, 3 valores: default, medium, high
+                                // Convertir el JSON a Array
+                                $results = json_decode($videoList, true);
 
-                                $date=date_create("$published_at");
-                                date_format($date,"d/m/Y");
-                                $publish = date_format($date,"d/m/Y");
-                                
-                                // Grid para mostrar los videos desde API Youtube
+                                foreach ($results['items'] as $items)
+                                {
+                                    $id = $items['id']['videoId']; //  Id del video
+                                    $title= $items['snippet']['title']; // Titulo del video
+                                    $description = $items['snippet']['description']; // Descripcion del video
+                                    $published_at = $items['snippet']['publishedAt']; // Fecha de publicacion
+                                    $channel_title = $items['snippet']['channelTitle']; // Titulo del canal
+                                    $thumbnail = $items['snippet']['thumbnails']['medium']['url']; // Imagen miniatura, 3 valores: default, medium, high
 
-                                echo "<div class='col-sm-4 wow fadeInUp' data-wow-duration='1000ms' data-wow-delay='400ms'>";
-                                echo "<div class='post-thumb'>";
-                                echo "<div class='post-icon'><i class='fa fa-video-camera'></i></div>";
-                                echo "</div>";
+                                    $date=date_create("$published_at");
+                                    date_format($date,"d/m/Y");
+                                    $publish = date_format($date,"d/m/Y");
+                                    
+                                    // Grid para mostrar los videos desde API Youtube
+
+                                    echo "<div class='col-sm-4 wow fadeInUp' data-wow-duration='1000ms' data-wow-delay='400ms'>";
+                                    echo "<div class='post-thumb'>";
+                                    echo "<div class='post-icon'><i class='fa fa-video-camera'></i></div>";
+                                    echo "</div>";
 
 
-                                echo "<div class='thumbnail-hover'><a href='https://youtube.com/watch?v=$id\' target='_blank'><img src='$thumbnail'></a></div>";
-                                echo "<h3><b> $title </b></h3>";
-                                echo "<span><i class='fa fa-calendar-o'></i> Publicado el  $publish </span>";
-                                echo "<div class='entry-content'><p> $description </p></div>";
+                                    echo "<div class='thumbnail-hover'><a href='https://youtube.com/watch?v=$id\' target='_blank'><img src='$thumbnail'></a></div>";
+                                    echo "<h3><b> $title </b></h3>";
+                                    echo "<span><i class='fa fa-calendar-o'></i> Publicado el  $publish </span>";
+                                    echo "<div class='entry-content'><p> $description </p></div>";
 
-                                echo "</div>";
+                                    echo "</div>";
+                                }
+
+                            } else {
+                                echo "<div class='col-sm-12 text-center'><a href='https://www.youtube.com/joelmarquez' target='_blank'><img src='images/logo_canal_youtube.png' alt='Canal Youtube de Joel Márquez'></a></div>";
                             }
+                             
                         ?>    
                 </div>
             </div>
