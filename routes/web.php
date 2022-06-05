@@ -21,4 +21,4 @@ Route::get('/', 'App\Http\Controllers\Controller@index');
 
 // Route::get('/', 'Controller@index');
 // Route::get('/', [Controller::class, 'index'])->name('index');
-Route::get('welcome', [Controller::class, 'welcome'])->name('welcome');
+// Route::get('welcome', [Controller::class, 'welcome'])->name('welcome');

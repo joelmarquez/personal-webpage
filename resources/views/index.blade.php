@@ -539,100 +539,63 @@
         <!--/#photografy background-->
 
         <section id="blog">
-        <div class="container">
-            <div class="row">
-            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
-                <h2>Blog Posts</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
-            </div>
-            </div>
-            <div class="blog-posts">
-            <div class="row">
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
-                <div class="post-thumb">
-                    <a href="#"><img class="img-responsive" src="images/blog/1.jpg" alt=""></a> 
-                    <div class="post-meta">
-                    <span><i class="fa fa-comments-o"></i> 3 Comments</span>
-                    <span><i class="fa fa-heart"></i> 0 Likes</span> 
-                    </div>
-                    <div class="post-icon">
-                    <i class="fa fa-pencil"></i>
-                    </div>
-                </div>
-                <div class="entry-header">
-                    <h3><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h3>
-                    <span class="date">June 26, 2014</span>
-                    <span class="cetagory">in <strong>Photography</strong></span>
-                </div>
-                <div class="entry-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
-                <div class="post-thumb">
-                    <div id="post-carousel"  class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#post-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#post-carousel" data-slide-to="1"></li>
-                        <li data-target="#post-carousel" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="item active">
-                        <a href="#"><img class="img-responsive" src="images/blog/2.jpg" alt=""></a>
+            <div class="container">
+                    <div class="row">
+                        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+                            <h2>Video Blog Posts</h2>
+                            <p>En mi canal de youtube te ofresco contenido referente al aprendizaje de todas las tecnologias para realizar 
+                                sitios para la internet, e indago en todas las tecnologias que nos faciliten el día a día.
+                            </p>
                         </div>
-                        <div class="item">
-                        <a href="#"><img class="img-responsive" src="images/blog/1.jpg" alt=""></a>
-                        </div>
-                        <div class="item">
-                        <a href="#"><img class="img-responsive" src="images/blog/3.jpg" alt=""></a>
-                        </div>
-                    </div>                               
-                    <a class="blog-left-control" href="#post-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                    <a class="blog-right-control" href="#post-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
-                    </div>                            
-                    <div class="post-meta">
-                    <span><i class="fa fa-comments-o"></i> 3 Comments</span>
-                    <span><i class="fa fa-heart"></i> 0 Likes</span> 
                     </div>
-                    <div class="post-icon">
-                    <i class="fa fa-picture-o"></i>
-                    </div>
+                <div class="blog-posts">
+                    <div class="row">
+
+                        <?php
+                            // $api_key="AIzaSyB9Jke6rnaLhptLSDZk95JbrvYeuslai0w"; // Ingresar tu Api Key
+                            $api_key="AIzaSyBqgVlVpwi1yYUw0CXiO8VVHHpy2aURm24"; // Ingresar tu Api Key
+                            $channel_id="UC8ezcxZ4sM_8qAD8_PyJ18w"; // El Id del canal
+                            $max_results="6"; // Resultados a mostrar
+                            
+                            // LLamar a la API para obtener la lista de videos en JSON
+                            $query = "https://www.googleapis.com/youtube/v3/search?key=$api_key&channelId=$channel_id&part=snippet,id&order=date&maxResults=".$max_results;
+                            $videoList = file_get_contents($query);
+                            
+
+                            // Convertir el JSON a Array
+                            $results = json_decode($videoList, true);
+
+                            foreach ($results['items'] as $items)
+                            {
+                                $id = $items['id']['videoId']; //  Id del video
+                                $title= $items['snippet']['title']; // Titulo del video
+                                $description = $items['snippet']['description']; // Descripcion del video
+                                $published_at = $items['snippet']['publishedAt']; // Fecha de publicacion
+                                $channel_title = $items['snippet']['channelTitle']; // Titulo del canal
+                                $thumbnail = $items['snippet']['thumbnails']['medium']['url']; // Imagen miniatura, 3 valores: default, medium, high
+
+                                $date=date_create("$published_at");
+                                date_format($date,"d/m/Y");
+                                $publish = date_format($date,"d/m/Y");
+                                
+                                // Grid para mostrar los videos desde API Youtube
+
+                                echo "<div class='col-sm-4 wow fadeInUp' data-wow-duration='1000ms' data-wow-delay='400ms'>";
+                                echo "<div class='post-thumb'>";
+                                echo "<div class='post-icon'><i class='fa fa-video-camera'></i></div>";
+                                echo "</div>";
+
+
+                                echo "<div class='thumbnail-hover'><a href='https://youtube.com/watch?v=$id\' target='_blank'><img src='$thumbnail'></a></div>";
+                                echo "<h3><b> $title </b></h3>";
+                                echo "<span><i class='fa fa-calendar-o'></i> Publicado el  $publish </span>";
+                                echo "<div class='entry-content'><p> $description </p></div>";
+
+                                echo "</div>";
+                            }
+                        ?>    
                 </div>
-                <div class="entry-header">
-                    <h3><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h3>
-                    <span class="date">June 26, 2014</span>
-                    <span class="cetagory">in <strong>Photography</strong></span>
-                </div>
-                <div class="entry-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="800ms">
-                <div class="post-thumb">
-                    <a href="#"><img class="img-responsive" src="images/blog/3.jpg" alt=""></a>
-                    <div class="post-meta">
-                    <span><i class="fa fa-comments-o"></i> 3 Comments</span>
-                    <span><i class="fa fa-heart"></i> 0 Likes</span> 
-                    </div>
-                    <div class="post-icon">
-                    <i class="fa fa-video-camera"></i>
-                    </div>
-                </div>
-                <div class="entry-header">
-                    <h3><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h3>
-                    <span class="date">June 26, 2014</span>
-                    <span class="cetagory">in <strong>Photography</strong></span>
-                </div>
-                <div class="entry-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-                </div>                    
             </div>
-            <div class="load-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                <a href="#" class="btn-loadmore"><i class="fa fa-repeat"></i> Load More</a>
-            </div>                
-            </div>
-        </div>
         </section><!--/#blog-->
 
         <section id="contact">

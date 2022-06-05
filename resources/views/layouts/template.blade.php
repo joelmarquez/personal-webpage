@@ -60,7 +60,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
-                                <p>&copy; Todos los derechos reservados 2015 - 2022 </p>
+                                <p>&copy; Todos los derechos reservados 2015 - <?php echo date("Y"); ?> </p>
                             </div>
                             <div class="col-sm-6">
                                 <p class="pull-right">Hospedado por <a href="http://grupodotcom.com" target="_blank">Grupo DotCom C.A</a></p>
