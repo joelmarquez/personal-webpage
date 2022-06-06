@@ -9,7 +9,7 @@
 <body>
 
     <h1>Correo electrónico desde el sitio web</h1>
-    <p>Hosting a Medida</p>
+    <p>JOel Marquez Web</p>
     <hr>
 
     <p><strong>Nombre:</strong> {{$contacto['name']}} </p>
