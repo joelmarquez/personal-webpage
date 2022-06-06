@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'App\Http\Controllers\Controller@index');
+Route::post('contactos', [ContactosController::class, 'store'])->name('contactanos.store');
 
 // Route::get('/', 'Controller@index');
 // Route::get('/', [Controller::class, 'index'])->name('index');

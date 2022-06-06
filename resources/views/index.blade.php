@@ -653,7 +653,7 @@
                             $videoList = file_get_contents($query);
                             
 
-                            if($query  == false)  {
+                            if($query  == true)  {
 
                                 // Convertir el JSON a Array
                                 $results = json_decode($videoList, true);
@@ -709,21 +709,21 @@
                 <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
                     <div class="row">
                         <div class="col-sm-6">
-                            <form id="main-contact-form" name="contact-form" method="post" action="#">
+                            <form id="main-contact-form" name="contact-form" method="post" action="{{ route('contactanos.store') }}">
                                 <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" name="name" class="form-control" placeholder="Nombre" required="required">
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required="required">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="email" name="email" class="form-control" placeholder="Email" required="required">
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="subject" class="form-control" placeholder="Asunto" required="required">
+                                    <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto" required="required">
                                 </div>
                                 <div class="form-group">
                                     <textarea name="message" id="message" class="form-control" rows="4" placeholder="Escribe tu mensaje" required="required"></textarea>
@@ -731,7 +731,13 @@
                                 <div class="form-group">
                                     <button type="submit" class="btn-submit">Enviar Formulario</button>
                                 </div>
-                            </form>   
+                            </form>  
+                            <!-- Mensaje de sesion-->
+                        @if (session('info'))
+                            <script>
+                                alert("{{ session('info') }}")
+                            </script>
+                        @endif 
                         </div>
                         <div class="col-sm-6">
                             <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
