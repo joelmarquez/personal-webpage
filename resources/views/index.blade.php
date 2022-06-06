@@ -340,7 +340,7 @@
                                 </div>
                                 <div class="folio-overview">
                                     <span class="folio-link"><a href="https://www.tiendasindustriales.com" ><i class="fa fa-link"></i></a></span>
-                                    <span class="folio-expand"><a href="images/portfolio/tiendas-industriales.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                                    <span class="folio-expand"><a href="images/portfolio/tiendas-industriales.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
                                 </div>
                             </div>
                         </div>
@@ -402,11 +402,11 @@
                             <div class="overlay-text">
                                 <div class="folio-info">
                                     <h3>Grupo Damark</h3>
-                                    <p>Grupo de Empresas dedicadas a diferentes rubros de la tecnología</p>
+                                    <p>Grupo de Empresas dedicadas a diferentes <br> rubros de la tecnología</p>
                                 </div>
                                 <div class="folio-overview">
                                     <span class="folio-link"><a href="https://www.grupodamark.com" target="_blank"><i class="fa fa-link"></i></a></span>
-                                    <span class="folio-expand"><a href="images/portfolio/grupo-dotcom-damark.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                                    <span class="folio-expand"><a href="images/portfolio/grupodamark.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
                                 </div>
                             </div>
                         </div>
