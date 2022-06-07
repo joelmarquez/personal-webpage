@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\Controller@index');
 Route::post('contactos', [ContactosController::class, 'store'])->name('contactanos.store');
+// Route::get('sendmail', [ContactosController::class, 'store'])->name('contactanos.store');
+// Route::get('sendmail', 'App\Http\Controllers\Controller@sendmail');
+
 
 // Route::get('/', 'Controller@index');
 // Route::get('/', [Controller::class, 'index'])->name('index');

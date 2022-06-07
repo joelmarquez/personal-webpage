@@ -170,7 +170,7 @@ function ssc_keydown(e) {
     return true
   }
   ssc_scrollArray(o, i, s);
-  // e.preventDefault()
+  e.preventDefault()
 }
 
 function ssc_mousedown(e) {

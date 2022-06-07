@@ -25,4 +25,5 @@ class ContactosController extends Controller
 
         return redirect('/')->with('info', 'Mensaje Enviado Con Exito');
     }
+    
 }

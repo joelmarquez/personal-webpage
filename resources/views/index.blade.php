@@ -643,17 +643,45 @@
                     <div class="row">
 
                         <?php
+                            
+                            $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyBqgVlVpwi1yYUw0CXiO8VVHHpy2aURm24&amp;channelId=UC8ezcxZ4sM_8qAD8_PyJ18w&amp;part=snippet,id&amp;order=date&amp;maxResults=3';
+                            
+                            
+                            // var_dump(http_response_code()); die;
+
+                            // echo('<pre>');
+                            // print_r(get_headers($url)); 
+                            // echo('</pre>');
+
+                            $misitio = (get_headers($url)); 
+                            $estado = "HTTP/1.0 200 OK";
+
+
+
+                            // var_dump($estado );
+                            // die;
+
+                            // echo "<pre>" ;
+                            //     var_dump($misitio[0]);
+                            //     die;
+                            // echo "</pre>" ;
+
+                            if ($misitio[0] != $estado) {
+
+                                echo "<div class='col-sm-12 text-center'><a href='https://www.youtube.com/joelmarquez' target='_blank'><img src='images/logo_canal_youtube.png' alt='Canal Youtube de Joel Márquez'></a></div>";
+
+                            } else {
+
                             // Api Youtube
                             $api_key="AIzaSyBqgVlVpwi1yYUw0CXiO8VVHHpy2aURm24"; // Ingresar tu Api Key
                             $channel_id="UC8ezcxZ4sM_8qAD8_PyJ18w"; // El Id del canal
                             $max_results="3"; // Resultados a mostrar
-                            
+                            // var_dump(http_response_code()); die;
                             // LLamar a la API para obtener la lista de videos en JSON
                             $query = "https://www.googleapis.com/youtube/v3/search?key=$api_key&channelId=$channel_id&part=snippet,id&order=date&maxResults=".$max_results;
                             $videoList = file_get_contents($query);
-                            
 
-                            if($query  == true)  {
+                    
 
                                 // Convertir el JSON a Array
                                 $results = json_decode($videoList, true);
@@ -687,11 +715,9 @@
                                     echo "</div>";
                                 }
 
-                            } else {
-                                echo "<div class='col-sm-12 text-center'><a href='https://www.youtube.com/joelmarquez' target='_blank'><img src='images/logo_canal_youtube.png' alt='Canal Youtube de Joel Márquez'></a></div>";
-                            }
-                             
-                        ?>    
+                            } 
+                            
+                        ?>
                 </div>
             </div>
         </section><!--/#blog-->
@@ -706,51 +732,53 @@
                             <p>Te responderé a la brevedad, es decir el mismo dia en horarios de oficina. </p>
                             </div>
                         </div>
-                <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <form id="main-contact-form" name="contact-form" method="post" action="{{ route('contactanos.store') }}">
-                                <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required="required">
+                    <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <form id="main-contact-form" name="contact-form" method="post" action="{{ route('contactanos.store') }}>
+                                {{-- <form id="" name="contact-form" method="post" action="sendmail"> --}}
+                                    @csrf
+                                    <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required">
-                                        </div>
+                                    <div class="form-group">
+                                        <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto" required="required">
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <textarea name="message" id="message" class="form-control" rows="4" placeholder="Escribe tu mensaje" required="required"></textarea>
-                                </div>                        
-                                <div class="form-group">
-                                    <button type="submit" class="btn-submit">Enviar Formulario</button>
-                                </div>
-                            </form>  
-                            <!-- Mensaje de sesion-->
-                        @if (session('info'))
-                            <script>
-                                alert("{{ session('info') }}")
-                            </script>
-                        @endif 
+                                    <div class="form-group">
+                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Escribe tu mensaje" required="required"></textarea>
+                                    </div>                        
+                                    <div class="form-group">
+                                        <button type="submit" class="btn-submit">Enviar Formulario</button>
+                                    </div>
+                                </form>  
+                                <!-- Mensaje de sesion-->
+                            @if (session('info'))
+                                <script>
+                                    alert("{{ session('info') }}")
+                                </script>
+                            @endif 
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                    <p>Desarrollo sitios para clientes de, Venezuela, Colombia, España, y Estados Unidos. </p>
+                                    <ul class="address">
+                                        <li><i class="fa fa-map-marker"></i> <span> Dirección:</span> Bogotá - Colombia</li>
+                                        <li><i class="fa fa-phone"></i> <span> Móvil:</span> +57 3143351528  </li>
+                                        <!-- <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:someone@yoursite.com"> support@oxygen.com</a></li> -->
+                                        <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.joelmarquez.net</a></li>
+                                    </ul>
+                                </div>                            
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-                                <p>Desarrollo sitios para clientes de, Venezuela, Colombia, España, y Estados Unidos. </p>
-                                <ul class="address">
-                                    <li><i class="fa fa-map-marker"></i> <span> Dirección:</span> Bogotá - Colombia</li>
-                                    <li><i class="fa fa-phone"></i> <span> Móvil:</span> +57 3143351528  </li>
-                                    <!-- <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:someone@yoursite.com"> support@oxygen.com</a></li> -->
-                                    <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.joelmarquez.net</a></li>
-                                </ul>
-                            </div>                            
-                        </div>
-                    </div>
                 </div>
             </div>        
         </section><!--/#contact-->
