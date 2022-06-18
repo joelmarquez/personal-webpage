@@ -661,8 +661,8 @@
                     <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="row">
                             <div class="col-sm-6">
-                                <form id="main-contact-form" name="contact-form" method="post" action="{{ route('contactanos.store') }}>
-                                {{-- <form id="" name="contact-form" method="post" action="sendmail"> --}}
+                                {{-- <form id="main-contact-form" name="contact-form" method="post" action="{{ route('contactanos.store') }}> --}}
+                                <form  name="contact-form" method="post" action="sendmail">
                                     @csrf
                                     <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                                         <div class="col-sm-6">
