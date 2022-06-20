@@ -683,7 +683,9 @@
                                         <textarea name="message" id="message" class="form-control" rows="4" placeholder="Escribe tu mensaje" required="required"></textarea>
                                     </div>                        
                                     <div class="form-group">
-                                        <button type="submit" class="btn-submit">Enviar Formulario</button>
+                                        {{-- <div class="g-recaptcha" data-sitekey="6LfA06QaAAAAAI-X9DKHatxp0mLFz_mLfejaMN3u"></div>  --}}
+                                        <div class="g-recaptcha" data-sitekey="6LfA06QaAAAAAI-X9DKHatxp0mLFz_mLfejaMN3u" data-callback="correctCaptcha"></div><br>
+                                        <button type="submit" name="submitForm" id="btn-validate" class="btn-submit">Enviar Formulario</button>
                                     </div>
                                 </form>  
                                 <!-- Mensaje de sesion-->

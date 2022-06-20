@@ -24,6 +24,7 @@
         <script type="text/javascript" src="js/jquery.countTo.js"></script>
         <script type="text/javascript" src="js/lightbox.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <!-- Javascript -->
 
         <!--[if lt IE 9]>

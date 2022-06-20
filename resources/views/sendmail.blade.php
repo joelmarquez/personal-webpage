@@ -1,4 +1,33 @@
 <?php
+            if (isset($_POST['submitForm'])) {
+                $captcha_response = true;
+                $recaptcha = $_POST['g-recaptcha-response'];
+
+                $url = 'https://www.google.com/recaptcha/api/siteverify';
+                $data = array(
+                    'secret' => '6LfA06QaAAAAAI-X9DKHatxp0mLFz_mLfejaMN3u',
+                    'response' => $recaptcha
+                );
+                $options = array(
+                    'http' => array (
+                        'method' => 'POST',
+                        'content' => http_build_query($data)
+                    )
+                );
+                $context  = stream_context_create($options);
+                $verify = file_get_contents($url, false, $context);
+                $captcha_success = json_decode($verify);
+                $captcha_response = $captcha_success->success;
+
+                if ($captcha_response) {
+                    echo '<p class="alert alert-success">Procesar datos...</p>';
+                } else {
+                    echo '<p class="alert alert-danger">Debes indicar que no eres un robot.';
+                }
+            }
+            ?>
+
+<?php
 
 $name       = @trim(stripslashes($_POST['name'])); 
 $from       = @trim(stripslashes($_POST['email'])); 
