@@ -44,7 +44,7 @@
                 <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="container text-center">
                         <div class="footer-logo">
-                            <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+                            <a href="index.html"><img class="img-responsive" src="images/logo.png" alt="Desarrollador Joel Marquez"></a>
                         </div>
                         <div class="social-icons">
                             <ul>

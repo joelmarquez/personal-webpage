@@ -49,8 +49,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">
-                    <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+                    <a class="navbar-brand" href="<?php $_SERVER['DOCUMENT_ROOT']?>"
+                    <h1><img class="img-responsive" src="images/logo.png" alt="Joel Marquez - Desarrollador Web"></h1>
                     </a>                    
                 </div>
                 <div class="collapse navbar-collapse">
@@ -684,7 +684,7 @@
                                     </div>                        
                                     <div class="form-group">
                                         {{-- <div class="g-recaptcha" data-sitekey="6LfA06QaAAAAAI-X9DKHatxp0mLFz_mLfejaMN3u"></div>  --}}
-                                        <div class="g-recaptcha" data-sitekey="6LfA06QaAAAAAI-X9DKHatxp0mLFz_mLfejaMN3u" data-callback="correctCaptcha"></div><br>
+                                        <div class="g-recaptcha" data-sitekey="6LfA06QaAAAAAI-X9DKHatxp0mLFz_mLfejaMN3u" data-callback="correctCaptcha"></div>
                                         <button type="submit" name="submitForm" id="btn-validate" class="btn-submit">Enviar Formulario</button>
                                     </div>
                                 </form>  
