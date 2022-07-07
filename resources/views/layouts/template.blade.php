@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sitio web oficial de Joel Marquez. Sitios webs modernos y con las ultimas tecnologias">
         <meta name="keywords" content="desarrollo web, desarrollo de apps, servicio de hosting, consultoria web, e-commerce, tiendas online, programacion"/>
+        <meta property="og:url" content="https://joelmarquez.net" />
+        <meta property="og:title" content="Joel Marquez | Desarrollador Web Profesional" />
+        <meta property="og:description" content="Sitio web oficial de Joel Marquez. Sitios webs modernos y con las ultimas tecnologias" />
+        <meta property="og:image" content="https://joelmarquez.net/images/Simbolo.png" />
         <meta name="author" content="">
         <title>@yield('title')</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,12 +35,38 @@
             <script src="js/html5shiv.js"></script>
             <script src="js/respond.min.js"></script>
         <![endif]-->
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19733114-21"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-19733114-21');
+            </script>
+        <!-- End Google Analitycs -->
+
+        <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W6XSDL5');</script>
+        <!-- End Google Tag Manager -->
+
         
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="images/favicon.ico">
     </head>
 
     <body>
+
+        <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6XSDL5"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
             @yield('content')
     
         @section('footer')
