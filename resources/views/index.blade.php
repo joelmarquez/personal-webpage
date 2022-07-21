@@ -662,33 +662,55 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 {{-- <form id="main-contact-form" name="contact-form" method="post" action="{{ route('contactanos.store') }}> --}}
-                                <form  name="contact-form" method="post" action="sendmail">
-                                    @csrf
+                                {{-- <form  name="contact-form" id="main-contact-form" method="post"  target="print_popup"  action="sendmail" onsubmit="window.open('about:blank','print_popup','width=1000,height=800');"> --}}
+                                <form class="formulario-contacto" name="contact-form" id="main-contact-form" method="post"  action="sendmail" role="form">
+                                    
+                                    <div id="alerta" class="alert hide">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <strong class="respuesta"></strong> <span class="mensaje-alerta"></span>
+                                    </div>
+
+                                        @csrf
                                     <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                                         <div class="col-sm-6">
                                             <div class="form-group">
+                                                <label for="">Nombre</label>
                                                 <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required="required">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
+                                                <label for="">Email</label>
                                                 <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto" required="required">
+                                        <label for="">Asunto</label>
+                                        {{-- <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto" required="required"> --}}
+                                        <select name="subject" id="subject" class="form-control">
+                                            <option value="Consulta para mi proyecto">Asesorias para mi proyecto</option>
+                                            <option value="Diseño de sitio web">Diseño de sitio web</option>
+                                            <option value="Actualizar mi sitio web">Actualizar mi sitio web</option>
+                                            <option value="Desarrollo de app para internet">Desarrollo de app para internet</option>
+                                            <option value="Otros requerimientos">Otros requerimientos</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Escribe tu mensaje" required="required"></textarea>
+                                        <label for="">Mensaje</label>
+                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Escribe tu mensaje" required="required" minlength="20" maxlength="300"></textarea>
                                     </div>                        
                                     <div class="form-group">
                                         {{-- <div class="g-recaptcha" data-sitekey="6LfA06QaAAAAAI-X9DKHatxp0mLFz_mLfejaMN3u"></div>  --}}
                                         <div class="g-recaptcha" data-sitekey="6LfA06QaAAAAAI-X9DKHatxp0mLFz_mLfejaMN3u" data-callback="correctCaptcha"></div>
                                         <button type="submit" name="submitForm" id="btn-validate" class="btn-submit">Enviar Formulario</button>
+                                        <button type="reset" id="limpiar" hidden=""></button>
+                                        {{-- <button type="submit" class="btn btn-default">Enviar Formulario</button> --}}
                                     </div>
                                 </form>  
-                                <!-- Mensaje de sesion-->
+
+
+                            <!-- Mensaje de sesion-->
                             @if (session('info'))
                                 <script>
                                     alert("{{ session('info') }}")

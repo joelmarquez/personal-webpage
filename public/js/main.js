@@ -120,19 +120,54 @@ jQuery(function($) {
 	});
 
 	// Contact form
-	var form = $('#main-contact-form');
-	form.submit(function(event){
-		event.preventDefault();
-		var form_status = $('<div class="form_status"></div>');
+	// var form = $('#main-contact-form');
+	// form.submit(function(event){
+	// 	event.preventDefault();
+	// 	var form_status = $('<div class="form_status"></div>');
+
+	// 	$.ajax({
+	// 		type: $(this).attr("method"),
+	// 		url: $(this).attr("action"),
+	// 		data: $(this).serialize(),
+	// 		// url: $(this).attr('action'),
+	// 		// url: $('form').attr('action'),
+	// 		beforeSend: function(){
+	// 			form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
+	// 		}
+	// 	}).done(function(data){
+	// 		form_status.html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
+	// 	});
+	// });
+
+	$(".formulario-contacto").bind("submit", function(){
+
 		$.ajax({
-			// url: $(this).attr('action'),
-			url: $('form').attr('action'),
-			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
-			}
-		}).done(function(data){
-			form_status.html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
+			type: $(this).attr("method"),
+			url:  $(this).attr("action"),
+			data: $(this).serialize(),
+			success: function(success) {
+				if(success == "false") {
+					
+					$("#alerta").removeClass("hide").removeClass("alert-danger").removeClass("alert-success").addClass("alert-success");
+					$(".respuesta").html("Listo!");
+					$(".mensaje-alerta").html("Formulario enviado con exito!");
+					$("#main-contact-form").trigger("reset");
+				}
+				
+			},
+
+			error: function(){
+				$("#alerta").removeClass("hide").removeClass("alert-danger").removeClass("alert-success").addClass("alert-danger");
+				$(".respuesta").html("Error!");
+				$(".mensaje-alerta").html("No se pudo enviar tu mensaje");
+				
+			} 
+			
 		});
+		
+		return false;
+		
+
 	});
 
 	//Google Map
@@ -162,19 +197,4 @@ jQuery(function($) {
 
 
 });
-
-	$( '#btn-validate' ).click(function(){
-		var $captcha = $( '#recaptcha' ),
-			response = grecaptcha.getResponse();
-		if (response.length === 0) {
-		$( '.msg-error').text( "reCAPTCHA is mandatory" );
-		if( !$captcha.hasClass( "error" ) ){
-			$captcha.addClass( "error" );
-		}
-		} else {
-		$( '.msg-error' ).text('');
-		$captcha.removeClass( "error" );
-		alert( 'reCAPTCHA marked' );
-		}
-	});
 
