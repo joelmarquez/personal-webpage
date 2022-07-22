@@ -145,18 +145,30 @@ jQuery(function($) {
 			type: $(this).attr("method"),
 			url:  $(this).attr("action"),
 			data: $(this).serialize(),
-			success: function(success) {
-				if(success == "false") {
+			success: function(respuesta) {
+
+				// alert("Enviado");
+
+				if(respuesta == false) {
+
+					$("#alerta").removeClass("hide").removeClass("alert-danger").removeClass("alert-success").addClass("alert-danger");
+					$(".respuesta").html("Error!");
+					$(".mensaje-alerta").html("No se pudo enviar tu mensaje, intenta nuevamente");
 					
+				} else {
+
 					$("#alerta").removeClass("hide").removeClass("alert-danger").removeClass("alert-success").addClass("alert-success");
 					$(".respuesta").html("Listo!");
 					$(".mensaje-alerta").html("Formulario enviado con exito!");
-					$("#main-contact-form").trigger("reset");
+					$("#main-contact-form").trigger("reset");	
+
 				}
-				
 			},
 
-			error: function(){
+			error: function() {
+
+				// alert("ERROR");
+
 				$("#alerta").removeClass("hide").removeClass("alert-danger").removeClass("alert-success").addClass("alert-danger");
 				$(".respuesta").html("Error!");
 				$(".mensaje-alerta").html("No se pudo enviar tu mensaje");

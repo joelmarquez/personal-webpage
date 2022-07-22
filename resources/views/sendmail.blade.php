@@ -23,16 +23,20 @@ header('content-type: application/json');
         $respuesta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
 
         $atributos = Json_decode($respuesta, TRUE);
+
+        print(Json_encode($atributos['success']));
         
         // echo '<pre>';
         // var_dump($atributos);
+        // var_dump($atributos['success'];
         // die();
-        // echo '</pre>';      
+        // echo '</pre>';  
 
         if(!$atributos['success']){
             echo '<center>' . "<p> Hubo un problema: Verifica el Captcha. </p>" . '<center>' ;
             echo '<a href="javascript:history.back()">' . "<p> Volver Atrás </p>" . '</a>';
             header("refresh:10;url=https://joelmarquez.net");
+            // return print(json_encode('no'));
             die();
         }
 
@@ -48,7 +52,7 @@ header('content-type: application/json');
 
         echo '<center>' . "Gracias" . "<b> $name </b>" . "por enviar tu email". '<center>' . "<br>" ;
         echo '<center>' . "<p> Te respondere a la brevedad posible. </p>" . '<center>' ;
-
+        // return print(json_encode('ok'));
         //Establecer el encabezado de actualización utilizando PHP.
         header("refresh:4;url=https://joelmarquez.net");
 
